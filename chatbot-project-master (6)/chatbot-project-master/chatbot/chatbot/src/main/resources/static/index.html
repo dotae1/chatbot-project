@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sockjs-client/1.5.1/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js" charset="UTF-8"></script>
+</head>
+<body>
+<noscript>
+    <h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websocket relies on Javascript being enabled. Please enable Javascript and reload this page!</h2>
+</noscript>
+<div id="main-content" class="container-fluid">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="form-group">
+                <input type="text" id="roomName" class="form-control" placeholder="채팅방 이름을 입력하세요....">
+                <button id="createRoom" class="btn btn-default btn-block" type="button">채팅방 생성</button>
+            </div>
+            <ul id="chatRooms" class="list-group" style="margin-top: 10px;">
+                <!-- 채팅방 목록이 여기에 추가됩니다 -->
+            </ul>
+        </div>
+        <div class="col-md-9">
+            <div id="chat-box">
+                <table id="conversation" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>메세지</th>
+                    </tr>
+                    </thead>
+                    <tbody id="communicate">
+                    </tbody>
+                </table>
+            </div>
+            <div id="input-box">
+                <form class="form-inline">
+                    <div class="form-group">
+                        <input type="text" id="msg" class="form-control" placeholder="내용을 입력하세요....">
+                    </div>
+                    <button id="send" class="btn btn-default" type="button" disabled="disabled">보내기</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
